@@ -1,4 +1,4 @@
-# 8ProjetosEmPython
+# 8 Projetos em Python
  Projetos para desenvolver a escrita em Python
 
- Praticando conhecimentos da faculdade.
+ Praticando conhecimentos adiquiridos.
