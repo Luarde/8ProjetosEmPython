@@ -1,0 +1,16 @@
+{
+    "cSpell.ignoreWords": [
+        "criar"
+    ],
+    "cSpell.enableFiletypes": [
+        "python"
+    ],
+    "cSpell.enabled": true,
+    "cSpell.words": [
+        "Button",
+        "Layout",
+        "minimo",
+        "randint",
+        "self"
+    ]
+}
