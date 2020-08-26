@@ -27,8 +27,6 @@ class SimuladorDeDado:
                 self.GerarValorDoDado()
             elif self.eventos == 'não' or self.eventos == 'n':
                     print('Agradecemos sua participação!')
-            else: 
-                    print('Favor digitar sim ou não')
         except:
                     print('Ocorreu um erro ao receber sua resposta.')
 
