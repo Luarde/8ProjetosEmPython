@@ -10,7 +10,7 @@ class ChuteONumero:
         self.valor_maximo = 100
         self.tentar_novamente = True
 
-    def Iniciar(self):
+    def Iniciar(self): 
 
         # Layout
         layout = [
