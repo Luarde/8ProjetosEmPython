@@ -1,7 +1,7 @@
 # Projeto - 6 Jogo de aventura
 # Jogo que terá decisões diferentes baseado nas respostas que foram dadas.
-
 import random
+import PySimpleGUI as sg
 
 # Cenário: Uma guerra temos alguns tipos de guerreiro, e dependendo se nascer no norte ou no sul, seguirá para algum local onde irá batalhar.
 class JogoDaAventura:
@@ -15,19 +15,37 @@ class JogoDaAventura:
         self.finalHistoria4 = 'Você não é capaz de lutar essa batalha!'
         
     def Iniciar(self):
-        resposta1 = input(self.pergunta1)
-        if resposta1 ==  'n':
-            resposta1B = input(self.pergunta2) 
-            if resposta1B == 'espada':
+        #Layout
+        layout = [
+            [sg.Output(size=(30,0),key='respostas')],
+            [sg.Input(size=(25,0),key='escolha')],
+            [sg.Button('Responder')]
+        ]
+        
+
+        #Janela
+        self.janela = sg.Window('Jogo de Aventura!',Layout=layout)
+        #Ler os dados
+        self.LerValores()
+        #Fazer algo com os dados
+        print(self.pergunta1)
+        if self.valores['escolha'] ==  'n':
+            print(self.pergunta2) 
+            self.LerValores()
+            if self.valores['escolha'] == 'espada':
                 print(self.finalHistoria1)
-            if resposta1B == 'escudo':
+            if self.valores['escolha'] == 'escudo':
                 print(self.finalHistoria2)
-        if resposta1 == 's':
-            resposta1B = input(self.pergunta3)    
-            if resposta1B == 'linha':
+        if self.valores['escolha'] == 's':
+            print(self.pergunta3)
+            self.LerValores()    
+            if self.valores['escolha'] == 'linha':
                 print(self.finalHistoria3)
-            if resposta1B == 'tático':
+            if self.valores['escolha'] == 'tático':
                 print(self.finalHistoria4)
+
+    def LerValores(self):
+        self.evento, self.valores = self.janela.Read()           
 
 jogo=JogoDaAventura()
 jogo.Iniciar()
